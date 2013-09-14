@@ -4,5 +4,5 @@ from api.models import Script
 
 @json_view
 def index(request):
-    return [script.humanReadable() for script in Script.objects.all()]
+    return [script.humanReadable() for script in Script.objects.order_by('name')]
 
