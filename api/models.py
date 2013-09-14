@@ -7,6 +7,13 @@ class Script(models.Model):
     
     def __unicode__(self):
         return self.name
+    
+    def humanReadable(self):
+        return {
+            'name': self.name,
+            #'version': self.latest_version(),
+            'admins': [unicode(user) for user in self.admins.all()],
+        }
 
 class Version(models.Model):
     script = models.ForeignKey(Script)

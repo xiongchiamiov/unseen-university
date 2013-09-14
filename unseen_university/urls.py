@@ -8,6 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     #url(r'^$', 'unseen_university.views.home', name='home'),
     #url(r'^unseen_university/', include('unseen_university.foo.urls')),
+    url(r'^api/', include('api.urls')),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
